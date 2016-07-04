@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>花蓮縣環境保護局</title>
+	<link rel="stylesheet" href="normalize.css" />
+	<style>
+		body{
+			width:1920px;
+			height:1080px;
+			background-color:black;
+			color:white;
+			overflow-x:hidden;
+			white-space: nowrap;
+		}
+		#caption{
+			font-size:16cm;
+			width:auto;
+			position:absolute;
+			left: 1920px;
+			
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$('div#caption').animate({"left": -$(this).width()}, 50000);  
+		})
+	</script>
+</head>
+<body>
+<div id="caption">
+<span style="color:yellow;">2016</span>年<span style="color:yellow;">07</span>月<span style="color:yellow;">04</span>日<span style="color:yellow;">13</span>時懸浮微粒濃度為 <span style="color:yellow;">100.1</span> ug/m3, 空氣品質良好, 揚塵防制不能少, 生活環境更美好, 花蓮縣環境保護局廣告
+</div>
+</body>
+</html>
