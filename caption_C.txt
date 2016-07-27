@@ -1,0 +1,10 @@
+花蓮縣政府|環境保護局
+%s年|%s月%s日
+{TIME}
+懸浮微粒|PM<sub>10</sub>濃度
+{VALUE}
+空氣品質|{AIRCONDITION}
+揚塵防制|不能少
+生活環境|更美好
+<div><span style="">威陞環境科技</span></div>|<div><span style="">股份有限公司</span></div>
+<div class="container"><img src="logo.jpg"  align="left"></div><div class="container"><div  style="width:100%;display:block;margin-top: 45px;">河川揚塵</div><div  style="width:100%;display:block;">監測系統</div></div>
