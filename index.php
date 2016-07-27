@@ -1,11 +1,15 @@
-﻿<?php
-//include "../Scripts/link.php";
+<?php
+include "../Scripts/link.php";
 $cap = isset($_GET['display']) && $_GET['display'] == 'cap' ? true : false;
 $file = file_get_contents('caption_C.txt');
 $str = array_filter(explode(PHP_EOL, $file));
 $display = $_GET['captionMode'] ? $_GET['captionMode'] : null;
 $station = isset($_GET['station']) && trim($_GET['station']) != '' ? trim($_GET['station']) : 1;
 //$hour = date('i') >= 5 ? date('H') - 1 : date('H') - 2;
+$sql =	"SELECT TRUNCATE(Mvalue,2) FROM hour_data WHERE MStation = ".$station." AND MDate =  (SELECT max(Mdate) FROM hour_data WHERE MStation = ".$station.")";
+$result=mysql_db_query($dblink,$sql,$link) or die ("錯誤<br>".$sql); 
+$db_data = mysql_fetch_row($result);
+
 
 ?>
 <!DOCTYPE html>
@@ -181,7 +185,6 @@ $station = isset($_GET['station']) && trim($_GET['station']) != '' ? trim($_GET[
 			
 		}
 		$(document).ready(function(){
-			$( ".adsbygoogle" ).hide();
 			set_time();
 			refresh();
 			go(sect, width);
@@ -193,7 +196,7 @@ $station = isset($_GET['station']) && trim($_GET['station']) != '' ? trim($_GET[
 <div id="caption">
 <?php
 $sectionCount = 1;
-$db_value = 100.11; // value taken from database
+$db_value = $db_data[0]; // value taken from database
 
 if($db_value >= 100){
 	$condition = '不良';
